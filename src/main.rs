@@ -55,18 +55,28 @@ impl From<&Point2D> for Point3D {
 
 fn main() {
     let p2 = Point2D::new(3.0, 4.0);
+
+    // One way to convert a Point2D to a Point3D.
     let p3 = Point3D::from(&p2);
     println!("p2 to 3D = {:?}", p3);
+
+    // Another way to convert a Point2D to a Point3D.
     let p3: Point3D = &p2.into();
     println!("p2 to 3D = {:?}", p3);
+
     let distance: f64 = p2.into();
     println!("p2 distance from origin = {}", distance);
 
     let p3 = Point3D::new(3.0, 4.0, 5.0);
+
+    // One way to convert a Point3D to a Point2D.
     let p2 = Point2D::from(&p3);
     println!("p3 to 2D = {:?}", p2);
+
+    // Another way to convert a Point3D to a Point2D.
     let p2: Point2D = &p3.into();
     println!("p3 to 2D = {:?}", p3);
+
     let distance: f64 = p3.into();
     println!("p3 distance from origin = {}", distance);
 }
