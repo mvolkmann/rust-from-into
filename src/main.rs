@@ -61,7 +61,9 @@ fn main() {
     println!("p2 to 3D = {:?}", p3);
 
     // Another way to convert a Point2D to a Point3D.
-    let p3: Point3D = &p2.into();
+    // Parens are required around the reference because the
+    // dot operator for the call to "into" has higher precedence.
+    let p3: Point3D = (&p2).into();
     println!("p2 to 3D = {:?}", p3);
 
     let distance: f64 = p2.into();
@@ -74,8 +76,8 @@ fn main() {
     println!("p3 to 2D = {:?}", p2);
 
     // Another way to convert a Point3D to a Point2D.
-    let p2: Point2D = &p3.into();
-    println!("p3 to 2D = {:?}", p3);
+    let p2: Point2D = (&p3).into();
+    println!("p3 to 2D = {:?}", p2);
 
     let distance: f64 = p3.into();
     println!("p3 distance from origin = {}", distance);
